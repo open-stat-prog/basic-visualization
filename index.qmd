@@ -10,33 +10,25 @@ format:
 source(here::here("R", "buttons.R"))
 ```
 
-Welcome to our template module. Every module comprises a series of topical *tutorials*, such as the three linked below.
+Welcome to the module on basic data visualization in R. Graphs are a crucial tool in data analysis because they allow us to explore, summarize, and communicate patterns in data that would be difficult to detect through numbers alone. Well-chosen visualizations can reveal trends, clusters, correlations, and outliers at a glance, helping to guide further analysis and support clear, persuasive communication of results.
 
-1. [First Topic](/tutorials/first_tutorial/index.qmd)
-1. [Second Topic](/tutorials/second_tutorial/index.qmd)
+In this module, we will explore the main plotting capabilities built into base R, focusing on four foundational chart types: scatterplots for examining relationships between two numeric variables, histograms for understanding the distribution of a single variable, boxplots for summarizing distributions and comparing groups, and density plots for visualizing the smooth distribution of continuous data. 
 
-Each tutorial will comprise a series of interactive lessons with practice problems embedded throughout. Each tutorial
-section should be wrapped up with a knowledge quiz.
+Each section combines conceptual explanation with hands-on examples to show how to create and customize these plots in R, highlighting how they can be adapted to different datasets and analysis goals.
 
 ## Learning Goals
 
 After completing this module, you will be able to:
 
-### Tutorial 1
-
-1. A thing you should learn from Tutorial 1.
-1. Another thing you should learn from Tutorial 1.
-1. One more thing you should learn From Tutorial 1.
-
-### Tutorial 2
-
-1. A thing you should learn from Tutorial 2.
-1. Another thing you should learn from Tutorial 2.
+1. Create scatterplots to investigate relationships between two variables.
+2. Build histograms to examine the distribution of a numeric variable.
+3. Use boxplots to summarize distributions, detect outliers, and compare groups effectively.
+4. Produce density plots to visualize approximations of a variable’s distribution.
 
 Click the button below to get started with the first tutorial.
 
 ```{r}
 #| echo: false
 #| results: asis
-begin_button("/tutorials/first_tutorial/index.html")
+begin_button("/tutorials/basic_graph/index.html")
 ```

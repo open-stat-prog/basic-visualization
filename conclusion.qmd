@@ -11,11 +11,11 @@ format:
 source(here::here("R", "buttons.R"))
 ```
 
-Use this page to provide some kind of brief wrap-up.
+By now, you have learned how to create and customize four of the most fundamental plot types in base R—scatterplots, histograms, boxplots, and density plots. You’ve seen how these visualizations can uncover relationships, highlight patterns, and summarize key features of your data. You also practiced adjusting labels, limits, colors, and other parameters to make your graphics clearer and more informative. These skills form the visual foundation for any data analysis workflow, enabling you to explore data quickly and communicate findings effectively.
 
 ## Next Steps
 
-If your module feeds naturally into another, link that module through the button below as a suggestion for further study.
+Base R graphics are a solid starting point, but for more complex, customizable, and publication-ready plots, the next module introduces ggplot2. You’ll learn its layered grammar of graphics, giving you a powerful and consistent way to build elegant visualizations.
 
 - Here, we're linking to the *First Steps* module.
 

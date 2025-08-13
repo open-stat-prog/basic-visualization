@@ -1,0 +1,84 @@
+---
+title: "Histograms"
+---
+
+```{r, echo=FALSE}
+diabetes <- readRDS("data/diabetes.rds")
+```
+
+A histogram shows the distribution of a single numeric variable by dividing its range into bins (intervals) and counting how many observations fall into each bin. It’s useful for understanding the shape, spread, and skewness of your data.
+
+The `hist()` function in Base R creates histograms. For example, to visualize the distribution of glucose levels in the diabetes dataset:
+
+```{r}
+hist(diabetes$glu)
+```
+
+The histogram shows glucose values (`glu`) mostly around 90, and probably normally distributed
+
+Like the plot() function, `hist()` accepts many parameters to customize the appearance, such as `main` for the title, `xlab` and `ylab` for axis labels, and `xlim` or `ylim` to set axis ranges. We can also control the number of bins with the `breaks` argument:
+
+```{r}
+hist(diabetes$glu, main = "Broad bins", breaks = 5)   # Very broad bins
+hist(diabetes$glu, main = "Small bins",breaks = 50)  # Many small bins
+```
+
+Styling options let us adjust colors and axis interpretation:
+
+```{r}
+hist(diabetes$glu,
+     col = "pink",
+     border = "blue",
+     probability = TRUE)  # y-axis shows probability density
+
+```
+
+Setting `probability = TRUE` makes the histogram’s total area sum to 1, which is useful when comparing with density plots.
+
+
+```{webr-r}
+#| autorun: true
+#| context: setup
+#| 
+download.file("https://raw.githubusercontent.com/p3piit/exp_rawdata/main/diabetes.rds", "diabetes.rds")
+diabetes <- readRDS("diabetes.rds")
+library(magrittr)
+```
+
+
+::: practice
+
+## Practice
+
+Make an histogram showing the age distribution in the `diabetes` dataset, with small bins, green columns and an appropiate title.
+
+:::: {.panel-tabset}
+## {{< var tab_title.editor >}}
+
+```{webr-r}
+
+```
+
+## {{< var tab_title.solution >}}
+
+
+```{r}
+hist(diabetes$age,
+     col = "green",
+     breaks = 50,
+     main = "Age distribution")  
+
+```
+::::
+
+:::
+
+
+
+
+
+
+
+
+
+

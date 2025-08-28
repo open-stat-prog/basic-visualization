@@ -1,0 +1,89 @@
+---
+title: "Scatterplot"
+---
+
+Scatterplots are one of the most fundamental tools for visualizing the relationship between two continuous variables. Each point on the plot represents a pair of values, one from each variable, positioned according to its coordinates. This makes scatterplots particularly useful for identifying trends, clusters, and possible outliers in the data, as well as for getting a first impression of whether a relationship might be positive, negative, or absent.
+
+```{r, echo=FALSE}
+library(dplyr)
+library(magrittr)
+diabetes <- readRDS("data/diabetes.rds")
+```
+
+The simplest scatterplot can be made with the `plot()` function. For example, in the `diabetes` dataset, we can examine how Body Mass Index (BMI) relates to Total Cholesterol (TC):
+
+```{r}
+diabetes %$% plot(y = tc, x = bmi)
+```
+
+The points form a cloud with a slight upward trend, suggesting that higher BMI values may be associated with higher cholesterol levels, although the variability is substantial.
+
+We can improve the readability by adding axis labels, a title, and adjusting axis limits. To do this we explicit some parameters: `ylab` and `xlab` define descriptive axis labels, `main` adds a clear title, and `ylim` and `xlim` specify the visible range of the axes to focus on the relevant data.
+
+```{r}
+diabetes %$% plot(
+  y = tc,
+  x = bmi,
+  ylab = "Total Cholesterol",
+  xlab = "Body Mass Index",
+  main = "Relation between BMI and Cholesterol",
+  ylim = c(0, 350),
+  xlim = c(0, 50)
+)
+
+```
+
+When `plot()` is applied to a data frame containing only numeric columns, it generates a scatterplot matrix—a grid showing pairwise relationships:
+
+```{r}
+diabetes %>% select(age, bmi, tc, glu, progress) %>% plot()
+```
+
+
+
+```{webr-r}
+#| autorun: true
+#| context: setup
+#| 
+download.file("https://raw.githubusercontent.com/p3piit/exp_rawdata/main/diabetes.rds", "diabetes.rds")
+diabetes <- readRDS("diabetes.rds")
+library(magrittr)
+```
+
+
+::: practice
+
+## Practice
+
+Using the `diabetes` dataset, make a scatterplot of age against total cholesterol, with proper axis labels and proper title
+
+:::: {.panel-tabset}
+## {{< var tab_title.editor >}}
+
+```{webr-r}
+
+```
+
+## {{< var tab_title.solution >}}
+
+
+```{r}
+diabetes %$% plot(
+  y = tc,
+  x = age,
+  ylab = "Total Cholesterol",
+  xlab = "Age",
+  main = "Relation between Age and Cholesterol",
+)
+```
+::::
+
+:::
+
+
+
+
+
+
+
+

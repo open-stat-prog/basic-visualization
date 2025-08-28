@@ -1,0 +1,25 @@
+---
+title: "Density Plots"
+---
+
+```{r, echo=FALSE}
+library(magrittr)
+diabetes <- readRDS("data/diabetes.rds")
+```
+
+A density plot provides a smooth estimate of a continuous variable’s distribution using density estimation. Unlike histograms, density plots are not dependent on bin width but instead on a smoothing parameter (bandwidth). They are especially useful for comparing multiple distributions in a clean, smooth form.
+
+We first compute a density estimate with `density()` and then plot it:
+
+```{r}
+d <- density(diabetes$bmi)
+plot(d)
+```
+
+Since the result of `density()` is an object with x (values) and y (estimated density) components, we can plot it manually for more control:
+
+```{r}
+d %$% plot(y = y, x = x, type = "l")
+```
+
+You can overlay density plots from different groups on the same chart (changing colors or line types) to compare shapes without cluttering the display with discrete bins.

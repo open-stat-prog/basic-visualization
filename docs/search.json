@@ -1,0 +1,173 @@
+[
+  {
+    "objectID": "tutorials/basic_graph/scatterplots.html",
+    "href": "tutorials/basic_graph/scatterplots.html",
+    "title": "Scatterplot",
+    "section": "",
+    "text": "Scatterplots are one of the most fundamental tools for visualizing the relationship between two continuous variables. Each point on the plot represents a pair of values, one from each variable, positioned according to its coordinates. This makes scatterplots particularly useful for identifying trends, clusters, and possible outliers in the data, as well as for getting a first impression of whether a relationship might be positive, negative, or absent.\nThe simplest scatterplot can be made with the plot() function. For example, in the diabetes dataset, we can examine how Body Mass Index (BMI) relates to Total Cholesterol (TC):\n\ndiabetes %$% plot(y = tc, x = bmi)\n\n\n\n\n\n\n\n\nThe points form a cloud with a slight upward trend, suggesting that higher BMI values may be associated with higher cholesterol levels, although the variability is substantial.\nWe can improve the readability by adding axis labels, a title, and adjusting axis limits. To do this we explicit some parameters: ylab and xlab define descriptive axis labels, main adds a clear title, and ylim and xlim specify the visible range of the axes to focus on the relevant data.\n\ndiabetes %$% plot(\n  y = tc,\n  x = bmi,\n  ylab = \"Total Cholesterol\",\n  xlab = \"Body Mass Index\",\n  main = \"Relation between BMI and Cholesterol\",\n  ylim = c(0, 350),\n  xlim = c(0, 50)\n)\n\n\n\n\n\n\n\n\nWhen plot() is applied to a data frame containing only numeric columns, it generates a scatterplot matrix—a grid showing pairwise relationships:\n\ndiabetes %&gt;% select(age, bmi, tc, glu, progress) %&gt;% plot()\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Basic Visualization",
+      "Scatterplot"
+    ]
+  },
+  {
+    "objectID": "tutorials/basic_graph/index.html",
+    "href": "tutorials/basic_graph/index.html",
+    "title": "Base R Graphics",
+    "section": "",
+    "text": "R includes a versatile set of built-in plotting tools, known as Base R graphics, which make it possible to create a wide range of visualizations without the need for additional packages. With these functions you can produce anything from simple scatterplots and histograms to more elaborate multi-panel displays, making them an essential starting point for data exploration.\nPlots in Base R are built up step by step. You begin with a main plotting function such as plot(), hist() or boxplot(), and then refine the result by adding titles, axis labels, limits, colors, and other visual elements. This way of working makes Base R graphics particularly suited to exploratory analysis, where it is often important to obtain quick visual feedback.\nAlthough modern systems like ggplot2 offer a more structured, layered approach, Base R remains an invaluable tool for rapidly inspecting datasets, creating lightweight graphics without extra dependencies, and understanding the core principles of R’s graphical system.\n\n\n\n Back to top",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Basic Visualization"
+    ]
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Module Template",
+    "section": "",
+    "text": "Welcome to the module on basic data visualization in R. Graphs are a crucial tool in data analysis because they allow us to explore, summarize, and communicate patterns in data that would be difficult to detect through numbers alone. Well-chosen visualizations can reveal trends, clusters, correlations, and outliers at a glance, helping to guide further analysis and support clear, persuasive communication of results.\nIn this module, we will explore the main plotting capabilities built into base R, focusing on four foundational chart types: scatterplots for examining relationships between two numeric variables, histograms for understanding the distribution of a single variable, boxplots for summarizing distributions and comparing groups, and density plots for visualizing the smooth distribution of continuous data.\nEach section combines conceptual explanation with hands-on examples to show how to create and customize these plots in R, highlighting how they can be adapted to different datasets and analysis goals.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "index.html#learning-goals",
+    "href": "index.html#learning-goals",
+    "title": "Module Template",
+    "section": "Learning Goals",
+    "text": "Learning Goals\nAfter completing this module, you will be able to:\n\nCreate scatterplots to investigate relationships between two variables.\nBuild histograms to examine the distribution of a numeric variable.\nUse boxplots to summarize distributions, detect outliers, and compare groups effectively.\nProduce density plots to visualize approximations of a variable’s distribution.\n\nClick the button below to get started with the first tutorial.\n\n\n Begin Tutorial",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Overview"
+    ]
+  },
+  {
+    "objectID": "in_progress.html",
+    "href": "in_progress.html",
+    "title": "In Progress",
+    "section": "",
+    "text": "Sorry, we’re still building the page you’ve requested.\nIt’s almost done…really.\nWe’re just working through a few minor issues…\n\n\n\nImage Source"
+  },
+  {
+    "objectID": "quizzes/basic_graph/questions/default_arguments2.html",
+    "href": "quizzes/basic_graph/questions/default_arguments2.html",
+    "title": "Question",
+    "section": "",
+    "text": "Use the following help file excerpt to answer the question below.\n\n\n\n\n\n\n\n\ncor\nR Documentation\n\n\n\n\n\n\n\n\n\nvar(x, y = NULL, na.rm = FALSE, use)\n\ncov(x, y = NULL, use = \"everything\",\n    method = c(\"pearson\", \"kendall\", \"spearman\"))\n\ncor(x, y = NULL, use = \"everything\",\n    method = c(\"pearson\", \"kendall\", \"spearman\"))\n\ncov2cor(V)\n\n\n\n\n\n\n\n\nWhat is the default value for the use argument of the cor() function?\n\n\n\n\"everything\"\n\"Everything\n\"spearman\"\n\"pearson\"\n\"kendall\"\nc(\"pearson\", \"spearman\", \"kendall\")\nNULL\nmethod\ny\nx\nThe use argument does not have a defined default value."
+  },
+  {
+    "objectID": "quizzes/basic_graph/questions/default_arguments2.html#answerlist",
+    "href": "quizzes/basic_graph/questions/default_arguments2.html#answerlist",
+    "title": "Question",
+    "section": "",
+    "text": "\"everything\"\n\"Everything\n\"spearman\"\n\"pearson\"\n\"kendall\"\nc(\"pearson\", \"spearman\", \"kendall\")\nNULL\nmethod\ny\nx\nThe use argument does not have a defined default value."
+  },
+  {
+    "objectID": "quizzes/basic_graph/questions/default_arguments2.html#answerlist-1",
+    "href": "quizzes/basic_graph/questions/default_arguments2.html#answerlist-1",
+    "title": "Question",
+    "section": "Answerlist",
+    "text": "Answerlist\n\nCorrect\nWrong: The “E” should be lowercase\nWrong: This is one of the possible methods\nWrong: This is one of the possible methods\nWrong: This is one of the possible methods\nWrong: These are all of the possible methods\nWrong: This is the default value for y\nWrong: This is an argument name\nWrong: This is an argument name\nWrong: This is an argument name\nWrong: There is a default value defined for use."
+  },
+  {
+    "objectID": "quizzes/basic_graph/questions/arithmetic2.html",
+    "href": "quizzes/basic_graph/questions/arithmetic2.html",
+    "title": "Question",
+    "section": "",
+    "text": "Question\nWhat is the value of \\(x\\) in the following equation?\n\\[\nx = \\frac{5 + 1}{5}\n\\]\nRound your answer to two decimal places.\n\n\nSolution\nAfter rounding, we get 1.20.\n\n\nMeta-information\nexname: Arithmetic extype: num exsolution: 1.20 extol: 0.01\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "quizzes/basic_graph/questions/logical.html",
+    "href": "quizzes/basic_graph/questions/logical.html",
+    "title": "Question",
+    "section": "",
+    "text": "Which of the following expressions will return TRUE?\n\n\n\n\"foo\" != \"bar\"\n(8 + 6) &lt; (8 * 6)\n(8 - 1) == 7 & 7 &gt;= (14 / 2)\n\"alice\" == \"bob\" | \"alice\" == \"alice\"\n!(6 &gt; 7)\nTRUE\nFALSE\n\"foo\" == \"bar\"\n(8 - 1) == 7 & 7 &gt; (14 / 2)\n\"alice\" == \"bob\" | \"alice\" != \"alice\"\n\"alice\" == \"bob\" & \"alice\" == \"alice\"\n!TRUE\nTRUE & FALSE"
+  },
+  {
+    "objectID": "quizzes/basic_graph/questions/logical.html#answerlist",
+    "href": "quizzes/basic_graph/questions/logical.html#answerlist",
+    "title": "Question",
+    "section": "",
+    "text": "\"foo\" != \"bar\"\n(8 + 6) &lt; (8 * 6)\n(8 - 1) == 7 & 7 &gt;= (14 / 2)\n\"alice\" == \"bob\" | \"alice\" == \"alice\"\n!(6 &gt; 7)\nTRUE\nFALSE\n\"foo\" == \"bar\"\n(8 - 1) == 7 & 7 &gt; (14 / 2)\n\"alice\" == \"bob\" | \"alice\" != \"alice\"\n\"alice\" == \"bob\" & \"alice\" == \"alice\"\n!TRUE\nTRUE & FALSE"
+  },
+  {
+    "objectID": "quizzes/basic_graph/questions/logical.html#answerlist-1",
+    "href": "quizzes/basic_graph/questions/logical.html#answerlist-1",
+    "title": "Question",
+    "section": "Answerlist",
+    "text": "Answerlist\n\nTRUE: “foo” is not equal to “bar”\nTRUE: 14 is strictly less than 48\nTRUE: 7 is equal to 7, and 7 is greater than or equal to 7\nTRUE: “alice” is not equal to “bob”, but “alice is equal to”alice”\nTRUE: 6 is not strictly greater than 7, and that result is negated\nTRUE: Trivially\nFALSE: Trivially\nFALSE: “foo” is not equal to “bar”\nFALSE: 7 is equal to 7, but 7 is not strictly greater than 7\nFALSE: “alice” is not equal to “bob”, and “alice” is equal to “alice”\nFALSE: “alice” is not equal to “bob”\nFALSE: Trivial negation\nFALSE: Trivially"
+  },
+  {
+    "objectID": "quizzes/basic_graph/index.html",
+    "href": "quizzes/basic_graph/index.html",
+    "title": "Knowledge Quiz: Tutorial 1",
+    "section": "",
+    "text": "Note\n\n\n\n\nClick the check-mark button to check your answer.\nClick the question-mark button to see an explanation of the solution.\n\n\n\n\n\n\nWhich of the following expressions will return TRUE?\n\n!TRUEFALSE\"alice\" == \"bob\" & \"alice\" == \"alice\"\"alice\" == \"bob\" | \"alice\" == \"alice\"\"foo\" == \"bar\"\"alice\" == \"bob\" | \"alice\" != \"alice\"\n\n\n\n\nFALSE: Trivial negation\nFALSE: Trivially\nFALSE: “alice” is not equal to “bob”\nTRUE: “alice” is not equal to “bob”, but “alice is equal to”alice”\nFALSE: “foo” is not equal to “bar”\nFALSE: “alice” is not equal to “bob”, and “alice” is equal to “alice”\n\n\n\n\n\nWhat is the value of \\(x\\) in the following equation?\n\\[\nx = \\frac{2 + 1}{5}\n\\]\nRound your answer to two decimal places.\n\n\n\nAfter rounding, we get 0.60.\n\n\n\n\nUse the following help file excerpt to answer the question below.\n\n\n\n\n\n\n\n\ncor\nR Documentation\n\n\n\n\n\nCorrelation, Variance and Covariance (Matrices)\n\nUsage\n\nvar(x, y = NULL, na.rm = FALSE, use)\n\ncov(x, y = NULL, use = \"everything\",\n    method = c(\"pearson\", \"kendall\", \"spearman\"))\n\ncor(x, y = NULL, use = \"everything\",\n    method = c(\"pearson\", \"kendall\", \"spearman\"))\n\ncov2cor(V)\n\n\n\n\n\n\n\n\nWhat is the default value for the use argument of the cor() function?\n\nc(\"pearson\", \"spearman\", \"kendall\")\"kendall\"\"pearson\"y\"everything\"\n\n\n\nThe default value for the use argument is \"everything\".\n\nWrong: These are all of the possible methods\nWrong: This is one of the possible methods\nWrong: This is one of the possible methods\nWrong: This is an argument name\nCorrect\n\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Basic Visualization",
+      "Knowledge Quiz"
+    ]
+  },
+  {
+    "objectID": "conclusion.html",
+    "href": "conclusion.html",
+    "title": "Conclusion",
+    "section": "",
+    "text": "By now, you have learned how to create and customize four of the most fundamental plot types in base R—scatterplots, histograms, boxplots, and density plots. You’ve seen how these visualizations can uncover relationships, highlight patterns, and summarize key features of your data. You also practiced adjusting labels, limits, colors, and other parameters to make your graphics clearer and more informative. These skills form the visual foundation for any data analysis workflow, enabling you to explore data quickly and communicate findings effectively.",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Conclusion"
+    ]
+  },
+  {
+    "objectID": "conclusion.html#next-steps",
+    "href": "conclusion.html#next-steps",
+    "title": "Conclusion",
+    "section": "Next Steps",
+    "text": "Next Steps\nBase R graphics are a solid starting point, but for more complex, customizable, and publication-ready plots, the next module introduces ggplot2. You’ll learn its layered grammar of graphics, giving you a powerful and consistent way to build elegant visualizations.\n\nHere, we’re linking to the First Steps module.\n\n\n\n Next Module",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Conclusion"
+    ]
+  },
+  {
+    "objectID": "tutorials/basic_graph/density.html",
+    "href": "tutorials/basic_graph/density.html",
+    "title": "Density Plots",
+    "section": "",
+    "text": "A density plot provides a smooth estimate of a continuous variable’s distribution using density estimation. Unlike histograms, density plots are not dependent on bin width but instead on a smoothing parameter (bandwidth). They are especially useful for comparing multiple distributions in a clean, smooth form.\nWe first compute a density estimate with density() and then plot it:\n\nd &lt;- density(diabetes$bmi)\nplot(d)\n\n\n\n\n\n\n\n\nSince the result of density() is an object with x (values) and y (estimated density) components, we can plot it manually for more control:\n\nd %$% plot(y = y, x = x, type = \"l\")\n\n\n\n\n\n\n\n\nYou can overlay density plots from different groups on the same chart (changing colors or line types) to compare shapes without cluttering the display with discrete bins.\n\n\n\n Back to top",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Basic Visualization",
+      "Density Plots"
+    ]
+  },
+  {
+    "objectID": "tutorials/basic_graph/hist.html",
+    "href": "tutorials/basic_graph/hist.html",
+    "title": "Histograms",
+    "section": "",
+    "text": "A histogram shows the distribution of a single numeric variable by dividing its range into bins (intervals) and counting how many observations fall into each bin. It’s useful for understanding the shape, spread, and skewness of your data.\nThe hist() function in Base R creates histograms. For example, to visualize the distribution of glucose levels in the diabetes dataset:\n\nhist(diabetes$glu)\n\n\n\n\n\n\n\n\nThe histogram shows glucose values (glu) mostly around 90, and probably normally distributed\nLike the plot() function, hist() accepts many parameters to customize the appearance, such as main for the title, xlab and ylab for axis labels, and xlim or ylim to set axis ranges. We can also control the number of bins with the breaks argument:\n\nhist(diabetes$glu, main = \"Broad bins\", breaks = 5)   # Very broad bins\n\n\n\n\n\n\n\nhist(diabetes$glu, main = \"Small bins\",breaks = 50)  # Many small bins\n\n\n\n\n\n\n\n\nStyling options let us adjust colors and axis interpretation:\n\nhist(diabetes$glu,\n     col = \"pink\",\n     border = \"blue\",\n     probability = TRUE)  # y-axis shows probability density\n\n\n\n\n\n\n\n\nSetting probability = TRUE makes the histogram’s total area sum to 1, which is useful when comparing with density plots.\n\n\n\n Back to top",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Basic Visualization",
+      "Histograms"
+    ]
+  },
+  {
+    "objectID": "tutorials/basic_graph/boxplots.html",
+    "href": "tutorials/basic_graph/boxplots.html",
+    "title": "Boxplots",
+    "section": "",
+    "text": "A boxplot summarizes a numeric variable’s distribution through five key statistics: the minimum, first quartile, median, third quartile, and maximum. It also highlights potential outliers. Boxplots are particularly useful for comparing distributions across groups and are a compact alternative to histograms when you want to quickly compare medians, spreads, and detect asymmetry or extreme values without showing the full shape of the distribution.\nA basic boxplot of the progress variable looks like this:\n\nboxplot(diabetes$progress)\n\n\n\n\n\n\n\n\nIn this case, the plot shows a median roughly in the middle of the box, fairly balanced whiskers, and no evident extreme outliers, suggesting a relatively symmetric distribution. In boxplots, outliers are typically displayed as individual points beyond the whiskers, which extend to 1.5 times the interquartile range from the box.\nBoxplots in base R accept many of the same parameters as the plot() function, such as axis labels, main titles, and limits, allowing for consistent styling across different plot types. We can also rotate the boxplot horizontally and change the whisker range:\n\nboxplot(diabetes$progress,\n        horizontal = TRUE,\n        range = 3,\n        xlab = \"Disease Progression\")\n\n\n\n\n\n\n\n\nTo compare groups, we use a formula, where the variable of interest is plotted against a factor:\n\nboxplot(progress ~ sex, data = diabetes, col = \"violet\")\n\n\n\n\n\n\n\n\nThis produces side-by-side boxplots for each group in sex, allowing a quick visual comparison of tendencies and spread.\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\n\n\n\nPractice\n\n\n\nUse base R graphics and the titanic data to create conditional boxplots, where plots of age are conditioned on survived. What does this figure tell you about the ages of survivors (survived = 1) vs. non-survivors (survived = 0)?\n\n Interactive Editor Solution\n\n\n\nPlease enable JavaScript to experience the dynamic code cell content on this page.\n\n\n\nboxplot(age ~ survived, data = titanic)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Open-Stat-Prog",
+      "Basic Visualization",
+      "Boxplots"
+    ]
+  }
+]

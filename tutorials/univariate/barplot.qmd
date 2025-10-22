@@ -36,13 +36,11 @@ barplot(classProps)
 As with all of our Base R plotting, we can tweak the appearance in many ways.
 
 ```{r}
-barplot(
-  classTable,
-  horiz = TRUE,
-  main = "Classes of Titanic Tickets",
-  ylab = "Ticket Class",
-  xlab = "Number of Passengers",
-  col = rgb(181, 137, 0, max = 255),
-  border = rgb(0, 43, 54, max = 255)
-)
+barplot(classTable,
+        horiz = TRUE,
+        main = "Classes of Titanic Tickets",
+        ylab = "Ticket Class",
+        xlab = "Number of Passengers",
+        col = rgb(181, 137, 0, max = 255),
+        border = rgb(0, 43, 54, max = 255))
 ```

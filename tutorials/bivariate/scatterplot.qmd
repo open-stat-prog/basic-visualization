@@ -38,15 +38,13 @@ following parameters.
 - `ylim`, `xlim`: Define the ranges of the y-axis and x-axis
 
 ```{r}
-plot(
-  y = diabetes$tc,
-  x = diabetes$bmi,
-  ylab = "Total Cholesterol",
-  xlab = "Body Mass Index",
-  main = "Relation between BMI and Cholesterol",
-  ylim = c(0, 350),
-  xlim = c(0, 50)
-)
+plot(y = diabetes$tc,
+     x = diabetes$bmi,
+     ylab = "Total Cholesterol",
+     xlab = "Body Mass Index",
+     main = "Relation between BMI and Cholesterol",
+     ylim = c(0, 350),
+     xlim = c(0, 50))
 ```
 
 When we apply `plot()` to a data frame containing only numeric columns, we generate a scatterplot matrix: a grid of
@@ -75,13 +73,11 @@ meaningful axis labels and a title.
 ## {{< var tab_title.solution >}}
 
 ```{r}
-plot(
-  y = diabetes$tc,
-  x = diabetes$age,
-  ylab = "Total Cholesterol",
-  xlab = "Age",
-  main = "Relation between Age and Cholesterol",
-)
+plot(y = diabetes$tc,
+     x = diabetes$age,
+     ylab = "Total Cholesterol",
+     xlab = "Age",
+     main = "Relation between Age and Cholesterol")
 ```
 ::::
 

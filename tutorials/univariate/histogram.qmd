@@ -30,8 +30,12 @@ the bin width We can alter this behavior in several ways through the `breaks` ar
 - Define our own function to create the bins
 
 ```{r}
-hist(diabetes$glu, main = "Define bins via Scott's formula", breaks = "scott")
-hist(diabetes$glu, main = "Define bins with a vector", breaks = seq(50, 130, 10))
+hist(diabetes$glu,
+     main = "Define bins via Scott's formula",
+     breaks = "scott")
+hist(diabetes$glu,
+     main = "Define bins with a vector",
+     breaks = seq(50, 130, 10))
 hist(diabetes$glu, main = "Ask for 5 bins", breaks = 5)
 hist(diabetes$glu, main = "Ask for 50 bins", breaks = 50)
 ```

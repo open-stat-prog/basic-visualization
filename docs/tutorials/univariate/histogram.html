@@ -404,7 +404,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"id":1,"options":{"output":"true","results":"markup","out-height":"","classes":"","fig-cap":"","warning":"true","editor-word-wrap":"true","out-width":"700px","message":"true","editor-max-height":"","label":"unnamed-chunk-1","autorun":"true","comment":"","editor-font-scale":"1","editor-quick-suggestions":"false","read-only":"false","fig-width":7,"dpi":72,"context":"setup","fig-height":5},"code":"download.file(\"https://openstatprog.com/raw-data/diabetes.rds\", \"diabetes.rds\")\ndiabetes <- readRDS(\"diabetes.rds\")"},{"id":2,"options":{"output":"true","results":"markup","out-height":"","classes":"","fig-cap":"","warning":"true","editor-word-wrap":"true","out-width":"700px","message":"true","editor-max-height":"","label":"unnamed-chunk-2","autorun":"false","comment":"","editor-font-scale":"1","editor-quick-suggestions":"false","read-only":"false","fig-width":7,"dpi":72,"context":"interactive","fig-height":5},"code":""}];
+globalThis.qwebrCellDetails = [{"options":{"read-only":"false","fig-width":7,"fig-height":5,"out-width":"700px","fig-cap":"","message":"true","dpi":72,"editor-font-scale":"1","warning":"true","autorun":"true","context":"setup","comment":"","editor-word-wrap":"true","editor-quick-suggestions":"false","classes":"","output":"true","out-height":"","editor-max-height":"","label":"unnamed-chunk-1","results":"markup"},"code":"download.file(\"https://openstatprog.com/raw-data/diabetes.rds\", \"diabetes.rds\")\ndiabetes <- readRDS(\"diabetes.rds\")","id":1},{"options":{"read-only":"false","fig-width":7,"fig-height":5,"out-width":"700px","fig-cap":"","message":"true","dpi":72,"editor-font-scale":"1","warning":"true","autorun":"false","context":"interactive","comment":"","editor-word-wrap":"true","editor-quick-suggestions":"false","classes":"","output":"true","out-height":"","editor-max-height":"","label":"unnamed-chunk-2","results":"markup"},"code":"","id":2}];
 
 </script>
 <script type="module">
@@ -1671,19 +1671,6 @@ div.callout-practice.callout-style-default .callout-icon::before, div.callout-pr
   content: '\f085' !important;
   background-image: none;
 }
-div.callout-reading.callout {
-  border-left-color: purple;
-}
-div.callout-reading.callout-style-default > .callout-header {
-  background-color: rgb(from purple r g b / 13%);
-}
-div.callout-reading .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-reading.callout-style-default .callout-icon::before, div.callout-reading.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f518' !important;
-  background-image: none;
-}
 div.callout-reading-advanced.callout {
   border-left-color: red;
 }
@@ -1708,6 +1695,19 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: '\f0c1' !important;
+  background-image: none;
+}
+div.callout-reading.callout {
+  border-left-color: purple;
+}
+div.callout-reading.callout-style-default > .callout-header {
+  background-color: rgb(from purple r g b / 13%);
+}
+div.callout-reading .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-reading.callout-style-default .callout-icon::before, div.callout-reading.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f518' !important;
   background-image: none;
 }
 </style>
@@ -2182,7 +2182,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 <li>Define our own function to create the bins</li>
 </ul>
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(diabetes<span class="sc">$</span>glu, <span class="at">main =</span> <span class="st">"Define bins via Scott's formula"</span>, <span class="at">breaks =</span> <span class="st">"scott"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(diabetes<span class="sc">$</span>glu,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Define bins via Scott's formula"</span>,</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="st">"scott"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2190,7 +2192,9 @@ globalThis.qwebrCreateMonacoEditorInstance = function (cellData) {
 </figure>
 </div>
 </div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(diabetes<span class="sc">$</span>glu, <span class="at">main =</span> <span class="st">"Define bins with a vector"</span>, <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">130</span>, <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(diabetes<span class="sc">$</span>glu,</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Define bins with a vector"</span>,</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">breaks =</span> <span class="fu">seq</span>(<span class="dv">50</span>, <span class="dv">130</span>, <span class="dv">10</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

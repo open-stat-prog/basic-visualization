@@ -117,12 +117,10 @@ Use the `titanic` data to create a boxplot of `age`.
 ## {{< var tab_title.solution >}}
 
 ```{r}
-boxplot(
-  titanic$age,
-  range = 2,
-  xlab = "Age",
-  main = "Ages of Titanic Passengers"
-)
+boxplot(titanic$age,
+        range = 2,
+        xlab = "Age",
+        main = "Ages of Titanic Passengers")
 ```
 ::::
 

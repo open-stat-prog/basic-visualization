@@ -121,13 +121,11 @@ What does this figure tell you about relative rates of survival between male and
 ## {{< var tab_title.solution >}}
 ```{r}
 tab <- table(titanic$sex, titanic$survived)
-barplot(
-  tab, 
-  beside = TRUE, 
-  legend = TRUE,
-  xlab = "Survived",
-  main = "Survival Status of Titanic Passengers by Gender"
-)
+barplot(tab, 
+        beside = TRUE, 
+        legend = TRUE,
+        xlab = "Survived",
+        main = "Survival Status of Titanic Passengers by Gender")
 ```
 
 The relative survival rates are much better for female passengers. The number of males in the `survived = 'no'` group is
@@ -237,14 +235,12 @@ parameters in various function calls.
 ## {{< var tab_title.solution >}}
 ```{r}
 # Create the scatterplot
-plot(
-  bp ~ bmi,
-  data = diabetes,
-  pch = 15,
-  ylab = "Blood Pressure",
-  xlab = "Body Mass Index",
-  main = "Association between BMI and Average Blood Pressure"
-)
+plot(bp ~ bmi,
+     data = diabetes,
+     pch = 15,
+     ylab = "Blood Pressure",
+     xlab = "Body Mass Index",
+     main = "Association between BMI and Average Blood Pressure")
 
 # Add the horizontal rule
 abline(h = mean(diabetes$bp), lty = 3)

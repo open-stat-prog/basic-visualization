@@ -404,7 +404,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"download.file(\"https://openstatprog.com/raw-data/titanic.rds\", \"titanic.rds\")\ndownload.file(\"https://openstatprog.com/raw-data/diabetes.rds\", \"diabetes.rds\")\n\ntitanic <- readRDS(\"titanic.rds\")\ndiabetes <- readRDS(\"diabetes.rds\")","id":1,"options":{"dpi":72,"context":"setup","editor-word-wrap":"true","warning":"true","autorun":"true","results":"markup","fig-cap":"","message":"true","fig-height":5,"output":"true","editor-quick-suggestions":"false","classes":"","read-only":"false","out-height":"","out-width":"700px","comment":"","fig-width":7,"label":"unnamed-chunk-1","editor-font-scale":"1","editor-max-height":""}},{"code":"","id":2,"options":{"dpi":72,"context":"interactive","editor-word-wrap":"true","warning":"true","autorun":"false","results":"markup","fig-cap":"","message":"true","fig-height":5,"output":"true","editor-quick-suggestions":"false","classes":"","read-only":"false","out-height":"","out-width":"700px","comment":"","fig-width":7,"label":"unnamed-chunk-2","editor-font-scale":"1","editor-max-height":""}},{"code":"","id":3,"options":{"dpi":72,"context":"interactive","editor-word-wrap":"true","warning":"true","autorun":"false","results":"markup","fig-cap":"","message":"true","fig-height":5,"output":"true","editor-quick-suggestions":"false","classes":"","read-only":"false","out-height":"","out-width":"700px","comment":"","fig-width":7,"label":"unnamed-chunk-3","editor-font-scale":"1","editor-max-height":""}},{"code":"","id":4,"options":{"dpi":72,"context":"interactive","editor-word-wrap":"true","warning":"true","autorun":"false","results":"markup","fig-cap":"","message":"true","fig-height":5,"output":"true","editor-quick-suggestions":"false","classes":"","read-only":"false","out-height":"","out-width":"700px","comment":"","fig-width":7,"label":"unnamed-chunk-4","editor-font-scale":"1","editor-max-height":""}}];
+globalThis.qwebrCellDetails = [{"options":{"out-height":"","comment":"","message":"true","context":"setup","fig-height":5,"label":"unnamed-chunk-1","fig-width":7,"output":"true","warning":"true","editor-word-wrap":"true","out-width":"700px","dpi":72,"autorun":"true","editor-quick-suggestions":"false","fig-cap":"","results":"markup","read-only":"false","editor-font-scale":"1","editor-max-height":"","classes":""},"id":1,"code":"download.file(\"https://openstatprog.com/raw-data/titanic.rds\", \"titanic.rds\")\ndownload.file(\"https://openstatprog.com/raw-data/diabetes.rds\", \"diabetes.rds\")\n\ntitanic <- readRDS(\"titanic.rds\")\ndiabetes <- readRDS(\"diabetes.rds\")"},{"options":{"out-height":"","comment":"","message":"true","context":"interactive","fig-height":5,"label":"unnamed-chunk-2","fig-width":7,"output":"true","warning":"true","editor-word-wrap":"true","out-width":"700px","dpi":72,"autorun":"false","editor-quick-suggestions":"false","fig-cap":"","results":"markup","read-only":"false","editor-font-scale":"1","editor-max-height":"","classes":""},"id":2,"code":""},{"options":{"out-height":"","comment":"","message":"true","context":"interactive","fig-height":5,"label":"unnamed-chunk-3","fig-width":7,"output":"true","warning":"true","editor-word-wrap":"true","out-width":"700px","dpi":72,"autorun":"false","editor-quick-suggestions":"false","fig-cap":"","results":"markup","read-only":"false","editor-font-scale":"1","editor-max-height":"","classes":""},"id":3,"code":""},{"options":{"out-height":"","comment":"","message":"true","context":"interactive","fig-height":5,"label":"unnamed-chunk-4","fig-width":7,"output":"true","warning":"true","editor-word-wrap":"true","out-width":"700px","dpi":72,"autorun":"false","editor-quick-suggestions":"false","fig-cap":"","results":"markup","read-only":"false","editor-font-scale":"1","editor-max-height":"","classes":""},"id":4,"code":""}];
 
 </script>
 <script type="module">
@@ -1658,19 +1658,6 @@ globalThis.qwebrExecuteCode = async function (
 
 </script>
 <style>
-div.callout-practice.callout {
-  border-left-color: green;
-}
-div.callout-practice.callout-style-default > .callout-header {
-  background-color: rgb(from green r g b / 13%);
-}
-div.callout-practice .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-practice.callout-style-default .callout-icon::before, div.callout-practice.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f085' !important;
-  background-image: none;
-}
 div.callout-reading.callout {
   border-left-color: purple;
 }
@@ -1695,6 +1682,19 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: '\f0c1' !important;
+  background-image: none;
+}
+div.callout-practice.callout {
+  border-left-color: green;
+}
+div.callout-practice.callout-style-default > .callout-header {
+  background-color: rgb(from green r g b / 13%);
+}
+div.callout-practice .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-practice.callout-style-default .callout-icon::before, div.callout-practice.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f085' !important;
   background-image: none;
 }
 div.callout-reading-advanced.callout {
@@ -2282,13 +2282,11 @@ Practice
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>tab <span class="ot">&lt;-</span> <span class="fu">table</span>(titanic<span class="sc">$</span>sex, titanic<span class="sc">$</span>survived)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  tab, </span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">beside =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">legend =</span> <span class="cn">TRUE</span>,</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Survived"</span>,</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Survival Status of Titanic Passengers by Gender"</span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(tab, </span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">beside =</span> <span class="cn">TRUE</span>, </span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">legend =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"Survived"</span>,</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Survival Status of Titanic Passengers by Gender"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -2412,23 +2410,21 @@ Practice
 <div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
 <div class="cell" data-layout-align="center">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the scatterplot</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  bp <span class="sc">~</span> bmi,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> diabetes,</span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">pch =</span> <span class="dv">15</span>,</span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="at">ylab =</span> <span class="st">"Blood Pressure"</span>,</span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Body Mass Index"</span>,</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Association between BMI and Average Blood Pressure"</span></span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the horizontal rule</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(diabetes<span class="sc">$</span>bp), <span class="at">lty =</span> <span class="dv">3</span>)</span>
-<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimate the regression model</span></span>
-<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a>lmOut <span class="ot">&lt;-</span> <span class="fu">lm</span>(bp <span class="sc">~</span> bmi, <span class="at">data =</span> diabetes)</span>
-<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-17"><a href="#cb9-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the best fit line from the above regression</span></span>
-<span id="cb9-18"><a href="#cb9-18" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">reg =</span> lmOut, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(bp <span class="sc">~</span> bmi,</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>     <span class="at">data =</span> diabetes,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>     <span class="at">pch =</span> <span class="dv">15</span>,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>     <span class="at">ylab =</span> <span class="st">"Blood Pressure"</span>,</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>     <span class="at">xlab =</span> <span class="st">"Body Mass Index"</span>,</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>     <span class="at">main =</span> <span class="st">"Association between BMI and Average Blood Pressure"</span>)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the horizontal rule</span></span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h =</span> <span class="fu">mean</span>(diabetes<span class="sc">$</span>bp), <span class="at">lty =</span> <span class="dv">3</span>)</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Estimate the regression model</span></span>
+<span id="cb9-13"><a href="#cb9-13" aria-hidden="true" tabindex="-1"></a>lmOut <span class="ot">&lt;-</span> <span class="fu">lm</span>(bp <span class="sc">~</span> bmi, <span class="at">data =</span> diabetes)</span>
+<span id="cb9-14"><a href="#cb9-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-15"><a href="#cb9-15" aria-hidden="true" tabindex="-1"></a><span class="co"># Add the best fit line from the above regression</span></span>
+<span id="cb9-16"><a href="#cb9-16" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">reg =</span> lmOut, <span class="at">lwd =</span> <span class="dv">2</span>, <span class="at">col =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

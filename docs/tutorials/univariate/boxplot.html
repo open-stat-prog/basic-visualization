@@ -404,7 +404,7 @@ globalThis.qwebrCustomizedWebROptions = {
 };
 
 // Store cell data
-globalThis.qwebrCellDetails = [{"code":"download.file(\"https://openstatprog.com/raw-data/titanic.rds\", \"titanic.rds\")\ntitanic <- readRDS(\"titanic.rds\")","options":{"label":"unnamed-chunk-1","output":"true","warning":"true","editor-max-height":"","autorun":"true","fig-height":5,"message":"true","comment":"","editor-word-wrap":"true","classes":"","fig-width":7,"results":"markup","context":"setup","out-height":"","dpi":72,"out-width":"700px","fig-cap":"","editor-quick-suggestions":"false","read-only":"false","editor-font-scale":"1"},"id":1},{"code":"","options":{"label":"unnamed-chunk-2","output":"true","warning":"true","editor-max-height":"","autorun":"false","fig-height":5,"message":"true","comment":"","editor-word-wrap":"true","classes":"","fig-width":7,"results":"markup","context":"interactive","out-height":"","dpi":72,"out-width":"700px","fig-cap":"","editor-quick-suggestions":"false","read-only":"false","editor-font-scale":"1"},"id":2}];
+globalThis.qwebrCellDetails = [{"id":1,"options":{"out-width":"700px","editor-quick-suggestions":"false","fig-width":7,"editor-word-wrap":"true","out-height":"","warning":"true","comment":"","read-only":"false","classes":"","fig-cap":"","output":"true","label":"unnamed-chunk-1","dpi":72,"editor-max-height":"","context":"setup","results":"markup","message":"true","editor-font-scale":"1","autorun":"true","fig-height":5},"code":"download.file(\"https://openstatprog.com/raw-data/titanic.rds\", \"titanic.rds\")\ntitanic <- readRDS(\"titanic.rds\")"},{"id":2,"options":{"out-width":"700px","editor-quick-suggestions":"false","fig-width":7,"editor-word-wrap":"true","out-height":"","warning":"true","comment":"","read-only":"false","classes":"","fig-cap":"","output":"true","label":"unnamed-chunk-2","dpi":72,"editor-max-height":"","context":"interactive","results":"markup","message":"true","editor-font-scale":"1","autorun":"false","fig-height":5},"code":""}];
 
 </script>
 <script type="module">
@@ -1684,19 +1684,6 @@ div.callout-practice.callout-style-default .callout-icon::before, div.callout-pr
   content: '\f085' !important;
   background-image: none;
 }
-div.callout-reading-advanced.callout {
-  border-left-color: red;
-}
-div.callout-reading-advanced.callout-style-default > .callout-header {
-  background-color: rgb(from red r g b / 13%);
-}
-div.callout-reading-advanced .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
-div.callout-reading-advanced.callout-style-default .callout-icon::before, div.callout-reading-advanced.callout-titled .callout-icon::before {
-  font-family: 'Font Awesome 6 Free', FontAwesome;
-  font-style: normal;
-  content: '\f518' !important;
-  background-image: none;
-}
 div.callout-resource.callout {
   border-left-color: orange;
 }
@@ -1708,6 +1695,19 @@ div.callout-resource.callout-style-default .callout-icon::before, div.callout-re
   font-family: 'Font Awesome 6 Free', FontAwesome;
   font-style: normal;
   content: '\f0c1' !important;
+  background-image: none;
+}
+div.callout-reading-advanced.callout {
+  border-left-color: red;
+}
+div.callout-reading-advanced.callout-style-default > .callout-header {
+  background-color: rgb(from red r g b / 13%);
+}
+div.callout-reading-advanced .callout-toggle::before {  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="rgb(33, 37, 41)" class="bi bi-chevron-down" viewbox="0 0 16 16"><path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z"></path></svg>');}
+div.callout-reading-advanced.callout-style-default .callout-icon::before, div.callout-reading-advanced.callout-titled .callout-icon::before {
+  font-family: 'Font Awesome 6 Free', FontAwesome;
+  font-style: normal;
+  content: '\f518' !important;
   background-image: none;
 }
 </style>
@@ -2298,12 +2298,10 @@ Practice
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <div class="cell" data-layout-align="center">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  titanic<span class="sc">$</span>age,</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">range =</span> <span class="dv">2</span>,</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">xlab =</span> <span class="st">"Age"</span>,</span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">main =</span> <span class="st">"Ages of Titanic Passengers"</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(titanic<span class="sc">$</span>age,</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>        <span class="at">range =</span> <span class="dv">2</span>,</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="at">xlab =</span> <span class="st">"Age"</span>,</span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">main =</span> <span class="st">"Ages of Titanic Passengers"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">

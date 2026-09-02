@@ -17,9 +17,10 @@ title: "Knowledge Quiz: Univariate Visualizations"
 
 exams2forms::exams2forms(
   file = list(
-    "logical.Rmd",
-    "arithmetic2.Rmd",
-    "default_arguments2.Rmd"
+    "histogram_bin_count.Rmd",
+    "density_bandwidth.Rmd",
+    "boxplot_skew.Rmd",
+    "barplot_vs_histogram.Rmd"
   ),
   edir = here::here("quizzes", "univariate", "questions")
 )

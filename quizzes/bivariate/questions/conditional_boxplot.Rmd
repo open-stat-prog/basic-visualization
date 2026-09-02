@@ -1,0 +1,29 @@
+Question
+========
+Recall the conditional boxplot from the tutorial, created with `boxplot(progress ~ sex, data = diabetes)`. Suppose that,
+instead of looking similar, the box for one sex group sat entirely above the box for the other, with little to no
+overlap between the two boxes. What would this suggest?
+
+Answerlist
+----------
+* That sex group would tend to have meaningfully higher disease progression than the other.
+* The two sex groups would have identical disease progression distributions.
+* Sex would have no relationship with disease progression.
+* The `progress` variable would not have been measured correctly for one of the two groups.
+
+Solution
+========
+
+Answerlist
+----------
+* Correct: boxes that don't overlap indicate a clear separation between the two groups' central values.
+* Wrong: identical distributions would produce boxes that overlap closely, not boxes with a clear separation.
+* Wrong: a lack of relationship would show similarly positioned, overlapping boxes for both groups.
+* Wrong: a difference between groups on a boxplot reflects a pattern in the data, not a measurement error.
+
+Meta-information
+================
+exname: Interpreting a Conditional Boxplot
+extype: schoice
+exsolution: 1000
+exshuffle: 4

@@ -1,0 +1,28 @@
+Question
+========
+In a boxplot, the median line sits much closer to $Q_1$ than to $Q_3$, and the upper whisker is noticeably longer than
+the lower whisker. What does this suggest about the underlying distribution?
+
+Answerlist
+----------
+* The distribution is roughly symmetric.
+* The distribution is right-skewed (positively skewed), with a longer tail toward higher values.
+* The distribution is left-skewed (negatively skewed), with a longer tail toward lower values.
+* The distribution has no variability.
+
+Solution
+========
+
+Answerlist
+----------
+* Wrong: a symmetric distribution would have the median roughly centered in the box, with whiskers of similar length.
+* Correct: a median pulled toward $Q_1$ combined with a longer upper whisker is the signature of a right-skewed distribution.
+* Wrong: this pattern would instead show the median pulled toward $Q_3$ with a longer lower whisker.
+* Wrong: a distribution with no variability would show a box collapsed to a single line, not this pattern.
+
+Meta-information
+================
+exname: Interpreting Skew from a Boxplot
+extype: schoice
+exsolution: 0100
+exshuffle: 4

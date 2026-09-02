@@ -13,17 +13,21 @@ grouping factor. We then get a single figure with group-specific versions of the
 ### Boxplots
 
 We can use conditional boxplots to compare the distribution of a variable across groups. To create this type of figure,
-we employ the so-called *formula interface* when calling the `boxplot()` function. In the following code, we use the
-`diabetes` dataset to create sex-specific boxplots of disease progression.
+we employ the so-called *formula interface* when calling the `boxplot()` function. 
+
+**Do:** Run the following code to create sex-specific boxplots of disease progression using the `diabetes` dataset. Would you expect disease progression to differ noticeably between the two sex groups, or to look
+fairly similar? 
 
 ```{r}
 boxplot(progress ~ sex, data = diabetes)
 ```
 
-When we use the formula interface, we define the plot's structure through an R formula object that we specify as the
-first argument to `boxplot()`. In this formula, `progress ~ sex1`, we specify the plotted variable on the left-hand side
-of the formula and we put the grouping factor on the right-hand side of the formula. We also have to use the `data`
-argument to specify a data frame where `boxplot()` can find the variables we're referencing in the formula.
+**See:** The two boxplots look broadly similar in level and spread, suggesting disease progression doesn't differ
+dramatically between the sexes in this sample. When we use the formula interface, we define the plot's structure
+through an R formula object that we specify as the first argument to `boxplot()`. In this formula, `progress ~ sex`, we
+specify the plotted variable on the left-hand side of the formula and we put the grouping factor on the right-hand side
+of the formula. We also have to use the `data` argument to specify a data frame where `boxplot()` can find the
+variables we're referencing in the formula.
 
 ```{webr-r}
 #| autorun: true
@@ -38,7 +42,7 @@ diabetes <- readRDS("diabetes.rds")
 
 ::: practice
 
-## Practice
+## Practice Exercise
 
 Use the `titanic` dataset to create a conditional boxplot to visualize the distributions of `age` within the groups
 defined by the `survived` variable.
@@ -72,8 +76,11 @@ Conditional bar plots visualize two dimensional contingency tables. So, these ty
 the distribution of one categorical variable differs across levels of some other variable.
 
 To create a conditional bar plot, we fist create a two-way contingency table, and then we plot that table with the
-`barplot()` function In the following code we use the `titanic` dataset to visualize the conditional distributions of
-ticket classes for the two survival groups.
+`barplot()` function. 
+
+
+**Do:** Run the following code that uses the `titanic` dataset to visualize the conditional distributions of
+ticket classes for the two survival groups. What will `barplot()` do by default with a two-way table: will it place the bars for each survival group side by side, or stack them on top of each other?
 
 ```{r}
 # Cross-tabulate ticket class and survival status
@@ -83,23 +90,27 @@ tab <- table(titanic$class, titanic$survived)
 barplot(tab)
 ```
 
-The default bar plot created above suffers from two important problems.
+**See:** by default, `barplot()` stacks the bars for each ticket class group on top of each other. This default
+choice creates two important problems.
 
 1. The bars for each ticket class group are stacked, so the meaning of the values shown on the y-axis is ambiguous
 1. We don't know which ticket group is represented by which color.
 
-We can solve these problems by plotting the bars beside each other by setting `beside = TRUE` and drawing a legend by
-setting `legend = TRUE`.
+**Predict:** How can we adjust the plot to solve these problems? 
 
 ```{r}
 # Create a better visualization of the table
 barplot(tab, beside = TRUE, legend = TRUE)
 ```
 
+**Explain:** We can solve these problems by plotting the bars beside each other by setting `beside = TRUE` and drawing a legend by setting `legend = TRUE`.
+
 Now, we have a useful visualization. From this figure, we can clearly see that the relative survival rates of passengers
 traveling in third class were much worse than the survival rates of other passengers.
 
 ::: practice
+
+## Practice Exercise
 
 Use the `titanic` dataset to create a conditional bar plot to visualize the distributions of survival status within the
 gender groups defined by the `sex` variable.
@@ -139,7 +150,7 @@ much higher than the number of females, and the patterns is reversed in the `sur
 When generating histograms, we can't really create the same kind of conditional plots that we can with boxplots and bar
 plots, but we can overlay different plot layers to add useful information to our figure.
 
-For example, in the following code, we draw a kernel density plot on top of an existing histogram.
+**Do:** Run the following code to draw a kernel density plot on top of an existing histogram. 
 
 ```{r}
 # Create a basic histogram of blood glucose levels
@@ -152,15 +163,14 @@ d <- density(diabetes$glu)
 lines(y = d$y, x = d$x, col = "red")
 ```
 
-In this case, we cannot use the `plot()` function to create the kernel density layer since `plot()` would just replace
-the existing histogram with a new figure. Rather, we use the `lines()` function to add the appropriate curve as a new
-layer in the existing plot. Note that we're explicitly extracting the `x` and `y` vectors from the object returned by
-`density()` to define the x and y coordinates of the line.
+**See:** The red curve is added on top of the existing histogram, it does not replace it. This works
+because `lines()` is a layering function: it draws on top of whatever plot is already open, rather than starting a new
+one. Note that we're explicitly extracting the `x` and `y` vectors from the object returned by `density()` to define
+the x and y coordinates of the line.
 
-The Base R graphical suite offers many functions like `lines()` that add layers to existing plots. In the next example,
-we use the `abline()` function to add two dashed lines to denote the boundaries of the region containing the central 90%
-of observations.
+The Base R graphical suite offers many functions like `lines()` that add layers to existing plots. 
 
+**Predict:** What is the function of the lines added by the code below?
 ```{r}
 # Create a basic histogram of average blood pressure levels
 hist(diabetes$bp)
@@ -172,11 +182,25 @@ ci <- quantile(diabetes$bp, prob = c(0.025, 0.975))
 abline(v = ci, lty = 2, lwd = 2)
 ```
 
+**Explain:** The `abline()` adds two dashed lines to denote the boundaries of the region containing the central 90%
+of observations.
+
+
+::: {.callout-note}
+## Common Mistake
+
+It's tempting to reach for `plot()` (or `hist()`, `boxplot()`, etc.) whenever you want to add something to a figure. But
+these are all functions that draw a brand new plot, replacing whatever was there before, rather than adding to it. To
+add a layer to an *existing* plot, you need a dedicated layering function instead, such as `lines()`, `points()`, or
+`abline()`. If your intended overlay disappears and the plot looks unchanged (or a new plot appears in its place),
+check whether you accidentally used a plotting function instead of a layering one.
+:::
+
 ### Scatterplots
 
-We can apply the same type of layering process to mark up scatterplots with additional information. In the following
-example, we add the least squares best fit line to a scatterplot showing the relation between average blood pressure,
-`bp`, and blood glucose levels, `glu`.
+We can apply the same type of layering process to mark up scatterplots with additional information. 
+
+**Do:** Run the code below to add the least squares best fit line to a scatterplot showing the relation between average blood pressure, `bp`, and blood glucose levels, `glu`. 
 
 ```{r}
 # Create a scatterplot of blood pressure against blood glucose
@@ -189,11 +213,14 @@ lmOut <- lm(bp ~ glu, data = diabetes)
 abline(reg = lmOut, lwd = 2, col = "blue")
 ```
 
-Again, we use the `abline()` function to overlay a line onto the existing plot. In this case, however, we define the
-line based on the estimated regression coefficients stored in the `lmOut` object that we created with the `lm()`
-function.
+**See:** The fitted line slopes upward, indicating that higher blood glucose levels tend to go along
+with higher average blood pressure. Again, we use the `abline()` function to overlay a line onto the existing plot. In
+this case, however, we define the line based on the estimated regression coefficients stored in the `lmOut` object that
+we created with the `lm()` function.
 
 ::: practice
+
+## Practice Exercise
 
 Use the `diabetes` dataset to create a scatterplot with average blood pressure, `bp`, on the y-axis and body mass index,
 `bmi` on the x-axis.

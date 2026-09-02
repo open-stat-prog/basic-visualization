@@ -1,0 +1,29 @@
+Question
+========
+You call `barplot()` on a two-way contingency table without setting any additional arguments, and the resulting figure
+stacks each group's bar on top of another. Which argument should you change to instead display the bars for each group
+side by side?
+
+Answerlist
+----------
+* `legend = TRUE`
+* `beside = TRUE`
+* `probability = TRUE`
+* `horiz = TRUE`
+
+Solution
+========
+
+Answerlist
+----------
+* Wrong: `legend` only controls whether a legend is drawn; it does not change how the bars are arranged.
+* Correct: setting `beside = TRUE` places the bars for each group next to each other instead of stacking them.
+* Wrong: `probability` is a `hist()` argument for switching to a density scale, and has no effect on bar arrangement.
+* Wrong: `horiz` only flips the bars from vertical to horizontal; it doesn't change stacking versus grouping.
+
+Meta-information
+================
+exname: Stacked versus Grouped Bar Plots
+extype: schoice
+exsolution: 0100
+exshuffle: 4

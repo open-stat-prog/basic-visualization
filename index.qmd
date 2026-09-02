@@ -15,10 +15,15 @@ because they allow us to explore, summarize, and communicate patterns in data th
 numbers alone. Well-chosen visualizations can reveal trends, clusters, correlations, and outliers at a glance, helping
 to guide further analysis and support clear, persuasive communication of results.
 
-In this module, we will explore the main plotting capabilities built into base R, focusing on four foundational types of
-visualization: histograms, boxplots, bar plots, and scatterplots. Each section combines conceptual explanation with
-hands-on examples to show how to create and customize these plots in R, highlighting how they can be adapted to
-different datasets and analysis goals.
+In this module, we will explore the main plotting capabilities built into base R, focusing on five foundational types of
+visualization: histograms, kernel density plots, boxplots, bar plots, and scatterplots. Each section combines conceptual
+explanation with hands-on examples to show how to create and customize these plots in R, highlighting how they can be
+adapted to different datasets and analysis goals.
+
+::: {.callout-tip}
+## ⏱ Estimated Time to Complete
+About 100–130 minutes, including practice exercises and knowledge quizzes.
+:::
 
 ## Base R Graphics
 
@@ -39,6 +44,7 @@ remain useful for rapidly inspecting datasets and creating lightweight graphics 
 After completing this module, you will be able to use Base R functions to create:
 
 1. Histograms to visualize the distributions of numeric variables
+1. Kernel density plots to visualize smoothed distributions of numeric variables
 1. Boxplots to summarize distributions, detect outliers, and compare groups
 1. Bar plots to visualize the distributions of categorical variables
 1. Scatterplots to investigate relationships between two numeric variables

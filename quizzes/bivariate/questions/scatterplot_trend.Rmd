@@ -1,0 +1,29 @@
+Question
+========
+You create a scatterplot of two variables and observe that the cloud of points trends downward from left to right: as
+the x-axis variable increases, the points tend to sit lower on the y-axis. What does this pattern suggest about the
+relationship between the two variables?
+
+Answerlist
+----------
+* A positive association: higher values of one variable tend to go with higher values of the other.
+* A negative association: higher values of one variable tend to go with lower values of the other.
+* No association: the two variables are unrelated.
+* A perfect, deterministic relationship: one variable can be predicted exactly from the other.
+
+Solution
+========
+
+Answerlist
+----------
+* Wrong: a positive association would show the cloud trending upward, not downward.
+* Correct: a downward-trending cloud indicates a negative (inverse) association between the two variables.
+* Wrong: a lack of association would show a shapeless cloud with no consistent up or down trend.
+* Wrong: a trend alone doesn't imply a perfect relationship; the points could still show substantial scatter around it.
+
+Meta-information
+================
+exname: Reading Scatterplot Trends
+extype: schoice
+exsolution: 0100
+exshuffle: 4

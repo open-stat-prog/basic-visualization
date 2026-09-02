@@ -19,16 +19,15 @@ diabetes <- readRDS("diabetes.rds")
 diabetes <- readRDS(here::here("data", "diabetes.rds"))
 ```
 
-We make a simple scatterplot with the `plot()` function. For example, the following code uses the `diabetes` dataset to
-visualize the bivariate association between Body Mass Index, `bmi`, and Total Cholesterol, `tc`.
+**Do:** We make a simple scatterplot with the `plot()` function. For example, the following code uses the `diabetes` dataset to
+visualize the bivariate association between Body Mass Index, `bmi`, and Total Cholesterol, `tc`. Higher body fat is
+generally linked to less favorable cholesterol levels in the clinical literature. 
 
 ```{r}
 plot(y = diabetes$tc, x = diabetes$bmi)
 ```
 
-In this example, every point represents a different patient's value of BMI and their level of total cholesterol. The
-points form a cloud with a slight upward trend, suggesting that higher BMI values tend to be associated with higher
-cholesterol levels, although the variability is substantial.
+**See:** every point represents a different patient's value of BMI and their level of total cholesterol. The points form a cloud with a slight upward trend, suggesting that higher BMI values tend to be associated with higher cholesterol levels, although the variability is substantial.
 
 We can improve the readability by adding axis labels, a title, and adjusting the axis limits. To do so we adjust the
 following parameters.
@@ -36,6 +35,9 @@ following parameters.
 - `ylab`, `xlab`: Define new axis labels
 - `main`: Add a plot title
 - `ylim`, `xlim`: Define the ranges of the y-axis and x-axis
+
+**Predict:** these arguments only change the plot's cosmetics; before running the code, predict whether the underlying
+pattern of points (their positions relative to each other) will change at all.
 
 ```{r}
 plot(y = diabetes$tc,
@@ -47,19 +49,26 @@ plot(y = diabetes$tc,
      xlim = c(0, 50))
 ```
 
+**Explain:** as predicted, the points themselves sit in exactly the same relative positions as before; only the labels,
+title, and the visible range of each axis have changed, making the figure easier to read without altering the
+underlying data.
+
 When we apply `plot()` to a data frame containing only numeric columns, we generate a scatterplot matrix: a grid of
-scatterplots showing all the pairwise relationships.
+scatterplots showing all the pairwise relationships. **Do:** Run the code below that selects 5 numeric columns.
 
 ```{r}
 plot(diabetes[c("age", "bmi", "tc", "glu", "progress")])
 ```
 
+**See:** The grid contains 5 &times; 5 = 25 panels, one for every pair of the 5 selected variables
+(including each variable plotted against itself along the diagonal). Reading across a row or down a column lets us
+compare one variable's relationship with every other variable at a glance, without having to build each scatterplot
+individually.
+
 ::: practice
 
-## Practice
-
-Using the `diabetes` dataset, make a scatterplot of *total cholesterol* on the y-axis against *age* on the x-axis. Add
-meaningful axis labels and a title.
+## Practice Exercise
+Using the diabetes dataset, make a scatterplot of total cholesterol on the y-axis against age on the x-axis. Add meaningful axis labels and a title.
 
 - The `diabetes` dataset is already loaded in the working directory of this *webr* session.
 

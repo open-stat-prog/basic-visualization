@@ -1,0 +1,28 @@
+Question
+========
+Why is a bar plot, rather than a histogram, the appropriate choice for visualizing the distribution of a categorical
+variable such as ticket class?
+
+Answerlist
+----------
+* Because bar plots can only display continuous, numeric data.
+* Because a categorical variable has distinct, unordered or ordered levels, not a continuous range that needs to be divided into bins.
+* Because histograms cannot display counts, only proportions.
+* Because bar plots and histograms are interchangeable, so either one works equally well for any variable.
+
+Solution
+========
+
+Answerlist
+----------
+* Wrong: bar plots are specifically meant for categorical, not continuous, data.
+* Correct: bar plots represent counts per category, with gaps between bars to show that categories are distinct, rather than binning a continuous range.
+* Wrong: histograms can display raw counts by default, and can be converted to proportions with the `probability` argument.
+* Wrong: using the wrong plot type misrepresents the nature of the variable (continuous vs. categorical).
+
+Meta-information
+================
+exname: Bar Plots versus Histograms
+extype: schoice
+exsolution: 0100
+exshuffle: 4

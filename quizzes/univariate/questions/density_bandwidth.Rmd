@@ -1,0 +1,28 @@
+Question
+========
+You want to compare the distributions of a numeric variable across three groups on the same plot. Why might overlaid
+kernel density plots be preferable to overlaid histograms for this purpose?
+
+Answerlist
+----------
+* Because density plots don't require choosing any smoothing parameter, unlike histograms, which require choosing bins.
+* Because density plots draw smooth, continuous curves that can be overlaid without the visual clutter of overlapping bars.
+* Because density plots always reveal more detail about the data than histograms do.
+* Because density plots ignore differences in sample size between the groups being compared.
+
+Solution
+========
+
+Answerlist
+----------
+* Wrong: density plots still require choosing a smoothing parameter, the bandwidth, which plays a role similar to bin width.
+* Correct: continuous curves are easier to visually separate and compare than several sets of overlapping bars.
+* Wrong: whether a density plot reveals more or less detail depends on the chosen bandwidth, just as a histogram depends on bin choice.
+* Wrong: density plots are still affected by sample size, just like histograms.
+
+Meta-information
+================
+exname: Comparing Distributions with Density Plots
+extype: schoice
+exsolution: 0100
+exshuffle: 4

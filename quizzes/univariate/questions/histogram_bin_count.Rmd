@@ -1,0 +1,29 @@
+Question
+========
+Suppose you have a large sample from a smooth, roughly normal variable. If you increase the number of bins in a
+histogram of this variable from a small number (e.g., 5) to a very large number (e.g., 200), what generally happens to
+the histogram's appearance?
+
+Answerlist
+----------
+* It becomes progressively smoother, revealing an increasingly clear and simple shape.
+* It becomes more jagged, with bin-to-bin fluctuations caused by having only a few observations per bin.
+* Its shape reverses, so a right-skewed distribution appears left-skewed.
+* Its appearance stays exactly the same, since only bin width changes, not the underlying data.
+
+Solution
+========
+
+Answerlist
+----------
+* Wrong: more bins means fewer observations per bin, which introduces more random noise, not less.
+* Correct: with very many bins, each bin contains very few observations, so bar heights become noisy and jagged.
+* Wrong: increasing the number of bins does not change which side of the distribution has the longer tail.
+* Wrong: the number of bins directly changes how the data are grouped, so the plot's appearance does change.
+
+Meta-information
+================
+exname: Histogram Bin Count
+extype: schoice
+exsolution: 0100
+exshuffle: 4

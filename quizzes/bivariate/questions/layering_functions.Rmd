@@ -1,0 +1,28 @@
+Question
+========
+You've already created a histogram and now want to add a kernel density curve on top of it, in the same figure. What
+happens if you call `plot()` on the density estimate to try to add it?
+
+Answerlist
+----------
+* The density curve is drawn on top of the existing histogram, combining both into a single figure.
+* The `plot()` call opens a brand new figure, replacing the histogram instead of adding to it.
+* Nothing happens, since `plot()` cannot accept a density object as an argument.
+* R throws an error and stops execution.
+
+Solution
+========
+
+Answerlist
+----------
+* Wrong: `plot()` starts a new plot rather than drawing on top of an existing one.
+* Correct: `plot()` always draws a fresh figure; to add a layer to an existing plot, a dedicated layering function like `lines()` is needed instead.
+* Wrong: `plot()` can accept a density object; it just doesn't layer it onto an existing figure.
+* Wrong: this doesn't produce an error; it silently replaces the existing plot with a new one.
+
+Meta-information
+================
+exname: Layering Functions versus Plotting Functions
+extype: schoice
+exsolution: 0100
+exshuffle: 4

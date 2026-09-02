@@ -33,17 +33,17 @@ website:
       - section: tutorials/univariate/index.qmd
         contents:
         - href: tutorials/univariate/histogram.qmd
-        # - href: tutorials/univariate/density.qmd
+        - href: tutorials/univariate/density.qmd
         - href: tutorials/univariate/boxplot.qmd
         - href: tutorials/univariate/barplot.qmd
-        # - href: quizzes/univariate/index.qmd
-        #   text: "Knowledge Quiz"
+        - href: quizzes/univariate/index.qmd
+          text: "Knowledge Quiz"
       - section: tutorials/bivariate/index.qmd
         contents:
         - href: tutorials/bivariate/scatterplot.qmd
         - href: tutorials/bivariate/conditional.qmd
-        # - href: quizzes/bivariate/index.qmd
-        #   text: "Knowledge Quiz"
+        - href: quizzes/bivariate/index.qmd
+          text: "Knowledge Quiz"
       - href: conclusion.qmd
 
   page-footer:
@@ -52,6 +52,6 @@ website:
     left: |
       [![](/assets/images/UU_logo_2021_EN_BLACK.png){fig-alt="UU" width=200px}](https://uu.nl) 
     right: 
-      - text: "&copy; 2025"
+      - text: "&copy; 2026"
       - href: "https://github.com/open-stat-prog"
         text: Open-Stat-Prog

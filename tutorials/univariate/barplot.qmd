@@ -12,8 +12,9 @@ belong to each level of a categorical variable.
 
 We use the `barplot()` function to create bar plots in Base R. As with kernel density plots, however, we first need to
 summarize the data before creating the visualization. Specifically, we use the `table()` function to create a frequency
-table, and we then plot that table with `barplot()`. The following code visualizes the distribution of ticket classes in
-the `titanic` dataset.
+table, and we then plot that table with `barplot()`. 
+
+**Do:** Run the following code that visualizes the distribution of ticket classes in the `titanic` dataset. On a ship like the Titanic, third class tickets were generally the cheapest and most numerous. Before running the code, think about which ticket class you'd expect to have the tallest bar.
 
 ```{r}
 # Tabulate the counts of each ticket class
@@ -23,7 +24,9 @@ classTable <- table(titanic$class)
 barplot(classTable)
 ```
 
-To plot the counts as proportions, we convert the data in the table before plotting.
+**See:** In the plot we see that the third class has the tallest bar by a wide margin, reflecting that most passengers travelled in the cheapest ticket class.
+
+**Predict:** To plot the counts as proportions, we convert the data in the table before plotting. Predict how this will change the bar plot: will the bars change height relative to each other, or just the numbers shown on the y-axis?
 
 ```{r}
 # Convert counts to proportions
@@ -33,7 +36,10 @@ classProps <- classTable / sum(classTable)
 barplot(classProps)
 ```
 
-As with all of our Base R plotting, we can tweak the appearance in many ways.
+**Explain:** As with the switch from counts to a probability scale in a histogram, the bars keep exactly the same relative heights; only the y-axis has changed, now showing the proportion of passengers in each class instead of the raw count.
+
+As with all of our Base R plotting, we can tweak the appearance in many ways. For example, setting `horiz = TRUE` flips
+the orientation of the bars. Which axis will now show the ticket classes, and which will show the counts?
 
 ```{r}
 barplot(classTable,
@@ -44,3 +50,59 @@ barplot(classTable,
         col = rgb(181, 137, 0, max = 255),
         border = rgb(0, 43, 54, max = 255))
 ```
+
+The ticket classes now run along the y-axis, and the bars extend horizontally to show the passenger
+counts along the x-axis; the underlying data haven't changed, only the layout of the plot.
+
+::: {.callout-note}
+## Common Mistake
+
+Bar plots and histograms can look similar at a glance, but they visualize different kinds of variables. A bar plot's
+bars are separated by gaps because each bar represents a distinct, unordered or ordered category (e.g., a ticket
+class); there's no meaningful "in-between" value connecting one bar to the next. A histogram's bars touch because they
+represent contiguous bins across a continuous range, where every value in between is meaningful. Using a bar plot for a
+continuous numeric variable (or a histogram for a categorical one) misrepresents the nature of the data.
+:::
+
+```{webr-r}
+#| autorun: true
+#| context: setup
+
+download.file("https://openstatprog.com/raw-data/titanic.rds", "titanic.rds")
+titanic <- readRDS("titanic.rds")
+```
+
+::: practice
+
+## Practice exercise
+
+Use the `titanic` data to create a bar plot showing the proportion of passengers of each sex (`sex`).
+
+- Convert the counts to proportions before plotting
+- Add a better label for the y-axis
+- Add a better plot title
+- Set the fill-color of the bars to purple
+
+*NOTE:* The `titanic` dataset is already loaded in the working directory of this *webr* session.
+
+:::: {.panel-tabset}
+## {{< var tab_title.editor >}}
+
+```{webr-r}
+
+```
+
+## {{< var tab_title.solution >}}
+
+```{r}
+sexTable <- table(titanic$sex)
+sexProps <- sexTable / sum(sexTable)
+
+barplot(sexProps,
+        col = "purple",
+        ylab = "Proportion of Passengers",
+        main = "Passenger Sex")
+```
+::::
+
+:::

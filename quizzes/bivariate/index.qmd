@@ -17,9 +17,10 @@ title: "Knowledge Quiz: Bivariate Visualization"
 
 exams2forms::exams2forms(
   file = list(
-    "logical.Rmd",
-    "arithmetic2.Rmd",
-    "default_arguments2.Rmd"
+    "scatterplot_trend.Rmd",
+    "barplot_grouping.Rmd",
+    "layering_functions.Rmd",
+    "conditional_boxplot.Rmd"
   ),
   edir = here::here("quizzes", "bivariate", "questions")
 )

@@ -8,3 +8,7 @@ graphics.
 One of the primary reasons we use data visualization is to scrutinize the univariate distributions of individual
 variables in our data. For example, we may want to check how closely some variables follow a normal distribution, or we
 might want to screen for extreme values. Univariate visualizations are ideally suited to these types of analysis.
+
+We will cover histograms and kernel density plots for visualizing the distribution of numeric variables, boxplots for
+summarizing distributions and flagging potential outliers, and bar plots for visualizing the distribution of categorical
+variables.

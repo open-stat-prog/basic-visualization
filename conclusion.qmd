@@ -12,9 +12,36 @@ source(here::here("R", "buttons.R"))
 ```
 
 By completing this module, you've taken your first steps toward data visualization with R. You've learned how to use
-Base R graphics to create some of the most useful types of data visualization: histograms, boxplots, bar plots, and
-scatterplots. You also learned how to convert univariate plots into conditional plots and how to add layers to plots to
-increase the information provided by a single figure.
+Base R graphics to create some of the most useful types of data visualization: histograms, kernel density plots,
+boxplots, bar plots, and scatterplots. You also learned how to convert univariate plots into conditional plots and how
+to add layers to plots to increase the information provided by a single figure.
+
+## Self-Test
+
+The following assignment brings together every technique covered in this module, applied to a new dataset:
+[`mtcars`](https://stat.ethz.ch/R-manual/R-devel/library/datasets/html/mtcars.html), a collection of design and
+performance measurements for 32 cars from a 1974 issue of *Motor Trend* magazine.
+
+Using the `mtcars` dataset, complete each of the following tasks.
+
+1. Create a histogram of fuel efficiency, `mpg`, choosing a reasonable number of bins. Add a proper axis label and
+   title.
+1. Create a kernel density plot of `mpg`. Add a proper axis label and title.
+1. Create a boxplot of horsepower, `hp`, and use it to check for possible outliers.
+1. Create a bar plot showing the proportion of cars with each number of cylinders, `cyl`.
+1. Create a scatterplot of `mpg` (y-axis) against weight, `wt` (x-axis), and add the best fit line from a linear
+   regression of `mpg` on `wt`.
+1. Create a conditional boxplot comparing `mpg` between automatic and manual transmission cars, using the `am`
+   variable. What does the figure suggest about the relationship between transmission type and fuel efficiency?
+
+```{webr-r}
+#| autorun: true
+#| context: setup
+
+cars <- mtcars
+cars$am <- factor(cars$am, labels = c("automatic", "manual"))
+```
+
 
 ## Next Steps
 
@@ -27,6 +54,5 @@ publication-quality figures in R.
 ```{r}
 #| echo: false
 #| results: asis
-# next_module_button("https://www.openstatprog.com/ggplot/")
-next_module_button("in_progress.html")
+ next_module_button("https://openstatprog.com/ggplot-visualization/")
 ```

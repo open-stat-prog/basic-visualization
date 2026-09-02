@@ -2,32 +2,33 @@
 title: "Histograms"
 ---
 
+## The basic plot and making adjustments
+
 ```{r, echo = FALSE}
 diabetes <- readRDS(here::here("data", "diabetes.rds"))
 ```
 
-Histograms are one of the most straightforward and useful ways to visualize the distribution of a numeric variable. A
-histogram shows the distribution of a single numeric variable by dividing its range into bins (intervals), counting how
-many observations fall into each bin, and visualizing these counts as bars in a plot. Histograms are meant to represent
-a variable's probability distribution, so they're useful for understanding the shape, spread, and skewness of numeric
-variables
+Histograms are one of the most straightforward and useful ways to visualize the distribution of a numeric variable. A histogram shows the distribution of a single numeric variable by dividing its range into bins (intervals), counting how many observations fall into each bin, and visualizing these counts as bars in a plot. Histograms are meant to represent a variable's probability distribution, so they're useful for understanding the shape, spread, and skewness of numeric variables.
 
-The `hist()` function in Base R creates histograms. For example, the following code visualizes the distribution of blood
-glucose levels in the diabetes dataset.
+The `hist()` function in Base R creates histograms. 
 
+
+**Do:** Run the code below.
 ```{r}
 hist(diabetes$glu)
 ```
 
-### Adjusting the Basic Plot
+**See:** The code visualizes the distribution of blood glucose levels in the diabetes dataset. Blood glucose measurements in a general patient population tend to cluster around a normal range, with a smaller number of patients showing elevated readings. You can see that this distribution is right-skwed: most glucose readings cluster at the lower end of the range, with a longer tail stretching toward higher, less common values.
 
-By default, `hist()` will try to best represent the distribution by applying the [Sturges Formula][sturges] to define
-the bin width We can alter this behavior in several ways through the `breaks` argument.
+By default, `hist()` will try to best represent the distribution by applying the [Sturges Formula][sturges] to define the bin width. We can alter this behavior in several ways through the `breaks` argument.
 
 - Specify a different built-in algorithm
 - Provide a vector of cut points giving the bin margins
 - Request a fixed number of bins
 - Define our own function to create the bins
+
+**Predict:** What will happen to the histogram of blood glucose as we go from very few
+bins (5) to very many bins (50). Will the distribution's shape become clearer or noisier?
 
 ```{r}
 hist(diabetes$glu,
@@ -40,14 +41,28 @@ hist(diabetes$glu, main = "Ask for 5 bins", breaks = 5)
 hist(diabetes$glu, main = "Ask for 50 bins", breaks = 50)
 ```
 
-The `hist()` function accepts many parameters to customize the plot's appearance. For example, in the next code chunk,
-we adjust the following parameters.
+**Explain:** With only 5 bins, the histogram is coarse: it still shows the right skew, but hides finer details about where exactly the data cluster. With 50 bins, individual bars become sparse and jagged, since each bin now contains only a handful of observations, and this bin-to-bin noise can look like "real" bumps in the distribution that aren't actually meaningful.
+Choosing a sensible number of bins is therefore a balance between hiding structure (too few bins) and amplifying random noise (too many bins).
+
+## Customizing the plot
+
+**Do**: You can customize the appearance of the plot in many ways, using the many parameters that the `hist()` function accepts. Some examples of parameters that can be adjusted are:
 
 - `main`: Add a better title
 - `col`: Change the fill color of the bars
 - `border`: Change the border color of the bars
 - `probability`: Switch the y-axis to a probability scale
 
+**See:** By running the code below and comparing the new plot to the previous one, you can see how the changes are implemented in practice: 
+```{r}
+hist(diabetes$glu,
+     main = "Colorful Histogram",
+     col = "pink",
+     border = "blue",
+     probability = FALSE)
+```
+
+**Predict:** How will the y-axis change once we set `probability = TRUE` instead of leaving it at its default. Will the bars themselves change shape, or just what the y-axis represents?
 ```{r}
 hist(diabetes$glu,
      main = "Colorful Histogram",
@@ -56,9 +71,7 @@ hist(diabetes$glu,
      probability = TRUE)
 ```
 
-Setting `probability = TRUE` converts the y-axis to a probability scale and makes the histogram’s total area sum to 1.
-Hence the bar heights represent the proportion of the sample that falls into each bin, rather than a straight count of
-the observations in each bin.
+**Explain:** As you can see, the bars are exactly the same shape as before, only the y-axis has changed. Setting `probability = TRUE` converts the y-axis to a probability scale and makes the histogram's total area sum to 1. Hence the bar heights represent the proportion of the sample that falls into each bin, rather than a straight count of the observations in each bin.
 
 ### Graphical Parameters
 
@@ -93,9 +106,9 @@ diabetes <- readRDS("diabetes.rds")
 
 ::: practice
 
-## Practice
+## Practice exercise
 
-Make an histogram showing the age distribution in the `diabetes` dataset.
+Make a histogram showing the age distribution in the `diabetes` dataset.
 
 - Adjust the bin width to create a fine-grained visualization with many, small bins
 - Set the fill-color of the columns to green
@@ -123,27 +136,5 @@ hist(diabetes$age,
 ::::
 
 :::
-
-### Kernel Density Plots
-
-A kernel density plot provides a smoothed estimate of a continuous variable’s distribution. You can think about a kernel
-density plot as a smoothed version of a histogram. Essentially, we create a density plot by drawing a line that connects
-the tops of the columns from a special type of fine-grained histogram into a single continuous curve.
-
-In Base R, we don't have a single function to create a kernel density plot. We first compute a density estimate with the
-`density()` function, and then we plot the estimated density object. For example, the following code visualizes the
-distribution of BMI with a kernel density plot.
-
-```{r}
-d <- density(diabetes$bmi)
-plot(d)
-```
-
-As with any other Base R visualization, we can tweak the appearance of a kernel density plot through graphical
-parameters.
-
-```{r}
-plot(d, main = "Estimated Density of BMI", col = "blue")
-```
 
 [sturges]: https://doi.org/10.1080/01621459.1926.10502161
